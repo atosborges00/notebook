@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    @kind_options_for_select = Kind.all
   end
 
   # GET /contacts/1/edit
