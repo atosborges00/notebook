@@ -11,3 +11,11 @@ Kind.create!([{description: 'Amigo'},
               {description: 'Contato'}, 
               {description: 'Comercial'}])
 puts 'Gerando os tipos de contato (Kinds) [OK]'
+
+puts 'Gerando os tipos de Contatos (Contacts)'
+Contact.create!([
+    {name: 'Light Yagami', email: 'kira@gmail.com', kind: Kind.all.sample,  rmk: 'obs'},
+    {name: 'Naruto Uzumaki', email: 'naruto@gmail.com', kind: Kind.all.sample,  rmk: ''},
+    {name: 'Monkey D. Luffy', email: 'rei_dos_piratas@gmail.com', kind: Kind.all.sample,  rmk: 'carne'}
+])
+puts 'Gerando os tipos de Contatos (Contacts) [OK]'
