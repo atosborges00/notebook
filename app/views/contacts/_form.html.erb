@@ -32,6 +32,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Enviar', class: 'button' %>
+    <%= link_to 'Back', contacts_path, class: 'button' %>
   </div>
 <% end %>
