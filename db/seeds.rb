@@ -6,16 +6,31 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts 'Gerando os tipos de contato (Kinds)'
 Kind.create!([{description: 'Amigo'}, 
               {description: 'Contato'}, 
               {description: 'Comercial'}])
 puts 'Gerando os tipos de contato (Kinds) [OK]'
 
-puts 'Gerando os tipos de Contatos (Contacts)'
+
 Contact.create!([
     {name: 'Light Yagami', email: 'kira@gmail.com', kind: Kind.all.sample,  rmk: 'obs'},
     {name: 'Naruto Uzumaki', email: 'naruto@gmail.com', kind: Kind.all.sample,  rmk: ''},
     {name: 'Monkey D. Luffy', email: 'rei_dos_piratas@gmail.com', kind: Kind.all.sample,  rmk: 'carne'}
 ])
 puts 'Gerando os tipos de Contatos (Contacts) [OK]'
+
+
+Contact.all.each do |contact|
+    Address.create!([
+        {street: 'Rua Gayoso', city: 'São Paulo', state: 'SP', contact: contact}
+    ])
+end
+puts 'Gerando Endereços (Addresses) [OK]'
+
+
+Contact.all.each do |contact|
+    Phone.create!([
+        {phone: '+55 86 99911-2233', contact: contact}
+    ])
+end
+puts 'Gerando Telefones (Phones) [OK]'
