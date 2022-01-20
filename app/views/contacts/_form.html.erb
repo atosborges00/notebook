@@ -24,7 +24,6 @@
   <div class="field">
     <%= form.label :kind_id %>
     <%= form.collection_select(:kind_id, @kind_options_for_select, :id, :description) %>
-    f.association :kind
   </div>
 
   <%= form.fields_for :address do |address_fileds| %>
