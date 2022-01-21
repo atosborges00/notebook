@@ -57,3 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #gem to multiply fields
 gem 'cocoon'
+
+# gem to add pagination
+gem 'kaminari'
