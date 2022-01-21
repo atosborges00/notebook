@@ -43,12 +43,14 @@
     </div>
   <% end %>
 
-  <%= form.fields_for :phones do |phones_fileds| %>
-    <div class='field'>
-      <%= phones_fileds.label :phone %>
-      <%= phones_fileds.text_field :phone %>
+  <div id='phones'>
+    <%= form.fields_for :phones do |phones_fileds| %>
+      <%= render partial: 'phone_fields', locals: {f: phones_fileds} %>
+    <% end %>
+    <div class='form-group links'>
+      <%= link_to_add_association('> [Adicionar Telefone]', form, :phones, partial: 'phone_fields')%>
     </div>
-  <% end %>
+  </div>
 
   <div class="field">
     <%= form.label :rmk %>
